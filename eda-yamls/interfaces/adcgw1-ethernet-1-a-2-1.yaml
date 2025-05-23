@@ -1,0 +1,41 @@
+apiVersion: interfaces.eda.nokia.com/v1alpha1
+kind: Interface
+metadata:
+  creationTimestamp: "2025-05-19T08:24:09Z"
+  generation: 1
+  labels:
+    eda.nokia.com/role: interSwitch
+  name: adcgw1-ethernet-1-a-2-1
+  namespace: clab-sroslabtest
+  resourceVersion: "2078844"
+  uid: 6c32125a-aa6d-4b97-85f3-f2b80c3b0413
+spec:
+  description: inter-switch link to aspine2
+  enabled: true
+  encapType: "null"
+  ethernet:
+    stormControl:
+      enabled: false
+  lldp: true
+  members:
+  - enabled: true
+    interface: ethernet-1-a-2-1
+    lacpPortPriority: 32768
+    node: adcgw1
+  type: interface
+status:
+  enabled: true
+  lastChange: "2025-05-19T08:24:04.500Z"
+  members:
+  - enabled: true
+    interface: ethernet-1-a-2-1
+    lastChange: "2025-05-19T08:24:04.500Z"
+    neighbors:
+    - interface: ethernet-1/27
+      node: aspine2
+    node: adcgw1
+    nodeInterface: 1/1/c2/1
+    operationalState: up
+    speed: 100G
+  operationalState: up
+  speed: 100G

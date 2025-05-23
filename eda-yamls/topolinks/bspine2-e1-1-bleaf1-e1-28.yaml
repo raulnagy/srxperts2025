@@ -1,0 +1,22 @@
+apiVersion: core.eda.nokia.com/v1
+kind: TopoLink
+metadata:
+  creationTimestamp: "2025-05-19T08:24:14Z"
+  generation: 1
+  labels:
+    eda.nokia.com/role: interSwitch
+  name: bspine2-e1-1-bleaf1-e1-28
+  namespace: clab-sroslabtest
+  resourceVersion: "1016026"
+  uid: d5f2d8c9-394c-46ee-87d0-0ef222d6a698
+spec:
+  links:
+  - local:
+      interface: ethernet-1-1
+      interfaceResource: bspine2-ethernet-1-1
+      node: bspine2
+    remote:
+      interface: ethernet-1-28
+      interfaceResource: bleaf1-ethernet-1-28
+      node: bleaf1
+    type: interSwitch

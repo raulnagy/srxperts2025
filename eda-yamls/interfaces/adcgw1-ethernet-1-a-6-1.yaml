@@ -1,0 +1,41 @@
+apiVersion: interfaces.eda.nokia.com/v1alpha1
+kind: Interface
+metadata:
+  creationTimestamp: "2025-05-19T08:24:09Z"
+  generation: 2
+  labels:
+    eda.nokia.com/role: edge
+  name: adcgw1-ethernet-1-a-6-1
+  namespace: clab-sroslabtest
+  resourceVersion: "2082276"
+  uid: 6eed3e8f-6c36-4d76-ab2c-eb310fe46d1b
+spec:
+  description: inter-switch link to wanpe2
+  enabled: true
+  encapType: dot1q
+  ethernet:
+    stormControl:
+      enabled: false
+  lldp: true
+  members:
+  - enabled: true
+    interface: ethernet-1-a-6-1
+    lacpPortPriority: 32768
+    node: adcgw1
+  type: interface
+status:
+  enabled: true
+  lastChange: "2025-05-20T14:54:58.600Z"
+  members:
+  - enabled: true
+    interface: ethernet-1-a-6-1
+    lastChange: "2025-05-20T14:54:58.600Z"
+    neighbors:
+    - interface: 1/1/c1/1
+      node: wanpe2
+    node: adcgw1
+    nodeInterface: 1/1/c6/1
+    operationalState: up
+    speed: 100G
+  operationalState: up
+  speed: 100G

@@ -1,0 +1,22 @@
+apiVersion: core.eda.nokia.com/v1
+kind: TopoLink
+metadata:
+  creationTimestamp: "2025-05-19T08:24:15Z"
+  generation: 2
+  labels:
+    eda.nokia.com/role: edge
+  name: bdcgw2-eth5-wanpe1-eth4
+  namespace: clab-sroslabtest
+  resourceVersion: "1593969"
+  uid: 1d715b53-42bb-4211-a3ac-f6baf1164745
+spec:
+  links:
+  - local:
+      interface: ethernet-1-a-5-1
+      interfaceResource: bdcgw2-ethernet-1-a-5-1
+      node: bdcgw2
+    remote:
+      interface: ethernet-1-a-4-1
+      interfaceResource: wanpe1-ethernet-1-a-4-1
+      node: wanpe1
+    type: edge

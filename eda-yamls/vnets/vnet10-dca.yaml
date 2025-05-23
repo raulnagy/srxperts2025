@@ -1,0 +1,211 @@
+apiVersion: services.eda.nokia.com/v1alpha1
+kind: VirtualNetwork
+metadata:
+  creationTimestamp: "2025-05-22T10:00:53Z"
+  generation: 2
+  labels:
+    eda.nokia.com/datacenter: a
+  name: vnet10-dca
+  namespace: clab-sroslabtest
+  resourceVersion: "2079228"
+  uid: eabeb4ab-f36b-4929-8ce5-4587aaefcb3d
+spec:
+  bridgeDomains:
+  - name: bd-vnet10-dca
+    spec:
+      eviPool: evi-pool
+      l2proxyARPND:
+        proxyARP: false
+        proxyND: false
+        tableSize: 250
+      macAging: 300
+      macDuplicationDetection:
+        action: StopLearning
+        enabled: false
+        holdDownTime: 9
+        monitoringWindow: 3
+        numMoves: 5
+      tunnelIndexPool: tunnel-index-pool
+      type: EVPNVXLAN
+      vniPool: vni-pool
+  bridgeInterfaces:
+  - name: bd-if-vnet10-dca-if
+    spec:
+      bridgeDomain: bd-vnet10-dca
+      interface: aleaf1-ethernet-1-1
+      uplink:
+        uplinkVLANID: pool
+      vlanID: "10"
+  irbInterfaces:
+  - name: irb-if-vnet10-dca
+    spec:
+      arpTimeout: 14400
+      bfd:
+        desiredMinTransmitInt: 1000000
+        detectionMultiplier: 3
+        enabled: false
+        minEchoReceiveInterval: 1000000
+        requiredMinReceive: 1000000
+      bridgeDomain: bd-vnet10-dca
+      evpnRouteAdvertisementType:
+        arpDynamic: true
+        arpStatic: true
+        ndDynamic: true
+        ndStatic: true
+      hostRoutePopulate:
+        dynamic: true
+        evpn: true
+        static: true
+      ipAddresses:
+      - ipv4Address:
+          ipPrefix: 10.1.0.1/30
+      ipMTU: 1500
+      ipv6RouterAdvertisement:
+        currentHopLimit: 64
+        enabled: false
+        managedConfigurationFlag: false
+        maxAdvertisementInterval: 600
+        minAdvertisementInterval: 200
+        otherConfigurationFlag: false
+        reachableTime: 0
+        retransmitTime: 0
+        routerLifetime: 1800
+      l3ProxyARPND:
+        proxyARP: false
+        proxyND: false
+      learnUnsolicited: NONE
+      router: router-vnet10-dca
+  protocols:
+    bgp:
+      bgpGroups:
+      - name: bgp-vnet10-dca-to-pe
+        spec:
+          exportPolicy:
+          - policy-vnet10-dca-accept-all
+          ipv4Unicast:
+            enabled: true
+          multiHopMaxHop: 4
+          peerAS:
+            autonomousSystem: 65010
+      bgpPeers:
+      - name: bgp-peer-vnet10-dca-dcgw1-to-pe
+        spec:
+          dynamicNeighbor: false
+          group: bgp-vnet10-dca-to-pe
+          interface: rt-if-vnet10-dca-dcgw1-to-pe
+          interfaceKind: ROUTEDINTERFACE
+          ipv4Unicast:
+            enabled: true
+          node: adcgw1
+          peerIP: 10.10.10.1
+    routingPolicies:
+      policies:
+      - name: policy-vnet10-dca-accept-all
+        spec:
+          defaultAction:
+            policyResult: accept
+          statement:
+          - action:
+              policyResult: accept
+            match:
+              protocol: BGP_EVPN
+            name: policy-vnet10-dca-accept-all
+  routedInterfaces:
+  - name: rt-if-vnet10-dca-dcgw1-to-pe
+    spec:
+      arpTimeout: 14400
+      bfd:
+        desiredMinTransmitInt: 1000000
+        detectionMultiplier: 3
+        enabled: true
+        minEchoReceiveInterval: 1000000
+        requiredMinReceive: 1000000
+      interface: adcgw1-ethernet-1-a-5-1
+      ipMTU: 1500
+      ipv4Addresses:
+      - ipPrefix: 10.10.10.0/31
+        primary: true
+      ipv6RouterAdvertisement:
+        currentHopLimit: 64
+        enabled: false
+        managedConfigurationFlag: false
+        maxAdvertisementInterval: 600
+        minAdvertisementInterval: 200
+        otherConfigurationFlag: false
+        reachableTime: 0
+        retransmitTime: 0
+        routerLifetime: 1800
+      l3ProxyARPND:
+        proxyARP: true
+        proxyND: true
+      learnUnsolicited: NONE
+      router: router-vnet10-dca
+      vlanID: "10"
+      vlanPool: vlan-pool
+  - name: rt-if-vnet10-dca-dcgw2-to-pe
+    spec:
+      arpTimeout: 14400
+      bfd:
+        desiredMinTransmitInt: 1000000
+        detectionMultiplier: 3
+        enabled: true
+        minEchoReceiveInterval: 1000000
+        requiredMinReceive: 1000000
+      interface: adcgw2-ethernet-1-a-5-1
+      ipMTU: 1500
+      ipv4Addresses:
+      - ipPrefix: 10.10.10.2/31
+        primary: true
+      ipv6RouterAdvertisement:
+        currentHopLimit: 64
+        enabled: false
+        managedConfigurationFlag: false
+        maxAdvertisementInterval: 600
+        minAdvertisementInterval: 200
+        otherConfigurationFlag: false
+        reachableTime: 0
+        retransmitTime: 0
+        routerLifetime: 1800
+      l3ProxyARPND:
+        proxyARP: false
+        proxyND: false
+      learnUnsolicited: NONE
+      router: router-vnet10-dca
+      vlanID: "10"
+      vlanPool: vlan-pool
+  routers:
+  - name: router-vnet10-dca
+    spec:
+      bgp:
+        autonomousSystem: 64010
+        ebgpPreference: 170
+        enabled: true
+        ibgpPreference: 170
+        ipv4Unicast:
+          enabled: true
+        ipv6Unicast:
+          enabled: false
+        minWaitToAdvertise: 0
+        rapidWithdrawl: true
+        waitForFIBInstall: false
+      eviPool: evi-pool
+      routerID: 10.10.10.10
+      tunnelIndexPool: tunnel-index-pool
+      type: EVPNVXLAN
+      vniPool: vni-pool
+status:
+  lastChange: "2025-05-23T15:21:53.000Z"
+  nodes:
+  - adcgw2
+  - adcgw1
+  - aleaf1
+  numBGPPeers: 1
+  numBGPPeersOperDown: 0
+  numIRBInterfaces: 1
+  numIRBInterfacesOperDown: 0
+  numNodes: 3
+  numRoutedInterfaces: 2
+  numRoutedInterfacesOperDown: 0
+  numSubInterfaces: 1
+  numSubInterfacesOperDown: 0
+  operationalState: up

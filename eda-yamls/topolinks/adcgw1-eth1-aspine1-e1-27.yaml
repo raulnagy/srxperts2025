@@ -1,0 +1,22 @@
+apiVersion: core.eda.nokia.com/v1
+kind: TopoLink
+metadata:
+  creationTimestamp: "2025-05-19T08:24:14Z"
+  generation: 1
+  labels:
+    eda.nokia.com/role: interSwitch
+  name: adcgw1-eth1-aspine1-e1-27
+  namespace: clab-sroslabtest
+  resourceVersion: "1016018"
+  uid: b1e38c7c-6618-4073-b836-9ff10854ed4d
+spec:
+  links:
+  - local:
+      interface: ethernet-1-a-1-1
+      interfaceResource: adcgw1-ethernet-1-a-1-1
+      node: adcgw1
+    remote:
+      interface: ethernet-1-27
+      interfaceResource: aspine1-ethernet-1-27
+      node: aspine1
+    type: interSwitch

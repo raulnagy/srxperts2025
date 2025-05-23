@@ -1,0 +1,41 @@
+apiVersion: interfaces.eda.nokia.com/v1alpha1
+kind: Interface
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"interfaces.eda.nokia.com/v1alpha1","kind":"Interface","metadata":{"annotations":{},"creationTimestamp":"2025-05-21T08:59:54Z","generation":1,"labels":{"eda.nokia.com/role":"edge"},"name":"aleaf2-ethernet-1-2","namespace":"clab-sroslabtest","resourceVersion":"1527712","uid":"0cac97b0-2db4-4b79-a1a0-40af71dd7fa2"},"spec":{"description":"edge link to server 1","enabled":true,"encapType":"dot1q","ethernet":{"stormControl":{"enabled":false}},"lldp":true,"members":[{"enabled":true,"interface":"ethernet-1-2","lacpPortPriority":32768,"node":"aleaf2"}],"type":"interface"}}
+  creationTimestamp: "2025-05-22T14:07:36Z"
+  generation: 1
+  labels:
+    eda.nokia.com/role: edge
+  name: aleaf2-ethernet-1-2
+  namespace: clab-sroslabtest
+  resourceVersion: "2078891"
+  uid: adc229aa-da69-4bdd-a9ee-23c363529c21
+spec:
+  description: edge link to server 1
+  enabled: true
+  encapType: dot1q
+  ethernet:
+    stormControl:
+      enabled: false
+  lldp: true
+  members:
+  - enabled: true
+    interface: ethernet-1-2
+    lacpPortPriority: 32768
+    node: aleaf2
+  type: interface
+status:
+  enabled: true
+  lastChange: "2025-05-22T14:07:59.581Z"
+  members:
+  - enabled: true
+    interface: ethernet-1-2
+    lastChange: "2025-05-22T14:07:59.581Z"
+    node: aleaf2
+    nodeInterface: ethernet-1/2
+    operationalState: up
+    speed: 25G
+  operationalState: up
+  speed: 25G

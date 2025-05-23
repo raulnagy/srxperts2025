@@ -1,0 +1,38 @@
+apiVersion: interfaces.eda.nokia.com/v1alpha1
+kind: Interface
+metadata:
+  creationTimestamp: "2025-05-22T13:51:52Z"
+  generation: 1
+  labels:
+    eda.nokia.com/role: edge
+  name: aleaf1-ethernet-1-2
+  namespace: clab-sroslabtest
+  resourceVersion: "2078821"
+  uid: e8341b5a-71d5-45de-8676-acb0434dff9d
+spec:
+  description: edge link to server 1
+  enabled: true
+  encapType: dot1q
+  ethernet:
+    stormControl:
+      enabled: false
+  lldp: true
+  members:
+  - enabled: true
+    interface: ethernet-1-2
+    lacpPortPriority: 32768
+    node: aleaf1
+  type: interface
+status:
+  enabled: true
+  lastChange: "2025-05-22T13:52:13.801Z"
+  members:
+  - enabled: true
+    interface: ethernet-1-2
+    lastChange: "2025-05-22T13:52:13.801Z"
+    node: aleaf1
+    nodeInterface: ethernet-1/2
+    operationalState: up
+    speed: 25G
+  operationalState: up
+  speed: 25G

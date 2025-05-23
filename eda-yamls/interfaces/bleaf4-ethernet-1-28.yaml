@@ -1,0 +1,41 @@
+apiVersion: interfaces.eda.nokia.com/v1alpha1
+kind: Interface
+metadata:
+  creationTimestamp: "2025-05-19T08:24:09Z"
+  generation: 1
+  labels:
+    eda.nokia.com/role: interSwitch
+  name: bleaf4-ethernet-1-28
+  namespace: clab-sroslabtest
+  resourceVersion: "2078880"
+  uid: 90193d82-0b49-4274-b8ad-ec695de295f9
+spec:
+  description: inter-switch link to bspine2
+  enabled: true
+  encapType: "null"
+  ethernet:
+    stormControl:
+      enabled: false
+  lldp: true
+  members:
+  - enabled: true
+    interface: ethernet-1-28
+    lacpPortPriority: 32768
+    node: bleaf4
+  type: interface
+status:
+  enabled: true
+  lastChange: "2025-05-19T08:24:20.276Z"
+  members:
+  - enabled: true
+    interface: ethernet-1-28
+    lastChange: "2025-05-19T08:24:20.276Z"
+    neighbors:
+    - interface: ethernet-1/4
+      node: bspine2
+    node: bleaf4
+    nodeInterface: ethernet-1/28
+    operationalState: up
+    speed: 25G
+  operationalState: up
+  speed: 25G

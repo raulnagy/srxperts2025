@@ -1,0 +1,41 @@
+apiVersion: interfaces.eda.nokia.com/v1alpha1
+kind: Interface
+metadata:
+  creationTimestamp: "2025-05-19T08:24:09Z"
+  generation: 1
+  labels:
+    eda.nokia.com/role: interSwitch
+  name: aspine2-ethernet-1-3
+  namespace: clab-sroslabtest
+  resourceVersion: "2078863"
+  uid: 4e12fa24-72a1-4a79-ae5c-396293f1a6e5
+spec:
+  description: inter-switch link to aleaf3
+  enabled: true
+  encapType: "null"
+  ethernet:
+    stormControl:
+      enabled: false
+  lldp: true
+  members:
+  - enabled: true
+    interface: ethernet-1-3
+    lacpPortPriority: 32768
+    node: aspine2
+  type: interface
+status:
+  enabled: true
+  lastChange: "2025-05-19T08:24:20.365Z"
+  members:
+  - enabled: true
+    interface: ethernet-1-3
+    lastChange: "2025-05-19T08:24:20.365Z"
+    neighbors:
+    - interface: ethernet-1/28
+      node: aleaf3
+    node: aspine2
+    nodeInterface: ethernet-1/3
+    operationalState: up
+    speed: 400G
+  operationalState: up
+  speed: 400G

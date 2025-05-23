@@ -1,0 +1,41 @@
+apiVersion: interfaces.eda.nokia.com/v1alpha1
+kind: Interface
+metadata:
+  creationTimestamp: "2025-05-19T08:24:09Z"
+  generation: 1
+  labels:
+    eda.nokia.com/role: interSwitch
+  name: bspine1-ethernet-1-27
+  namespace: clab-sroslabtest
+  resourceVersion: "2078841"
+  uid: 79b40a9d-2c03-44d9-8cc1-dff1e4a5b931
+spec:
+  description: inter-switch link to bdcgw1
+  enabled: true
+  encapType: "null"
+  ethernet:
+    stormControl:
+      enabled: false
+  lldp: true
+  members:
+  - enabled: true
+    interface: ethernet-1-27
+    lacpPortPriority: 32768
+    node: bspine1
+  type: interface
+status:
+  enabled: true
+  lastChange: "2025-05-19T08:24:20.437Z"
+  members:
+  - enabled: true
+    interface: ethernet-1-27
+    lastChange: "2025-05-19T08:24:20.437Z"
+    neighbors:
+    - interface: 1/1/c1/1
+      node: bdcgw1
+    node: bspine1
+    nodeInterface: ethernet-1/27
+    operationalState: up
+    speed: 400G
+  operationalState: up
+  speed: 400G

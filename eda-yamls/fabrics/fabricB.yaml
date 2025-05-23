@@ -1,0 +1,107 @@
+apiVersion: fabrics.eda.nokia.com/v1alpha1
+kind: Fabric
+metadata:
+  creationTimestamp: "2025-05-20T13:37:18Z"
+  generation: 2
+  name: srx-dc-b
+  namespace: clab-sroslabtest
+  resourceVersion: "2079259"
+  uid: 483eee56-f6fb-4eba-9aa6-8a2e1b948dac
+spec:
+  borderLeafs:
+    asnPool: asn-pool
+    borderLeafNodeSelector:
+    - eda.nokia.com/datacenter=b,eda.nokia.com/role=backbone
+    systemPoolIPV4: systemipv4-pool
+    systemPoolIPV6: systemipv6-pool
+  fabricSelector:
+  - eda.nokia.com/datacenter=b
+  interSwitchLinks:
+    linkSelector:
+    - eda.nokia.com/role=interSwitch
+    poolIPV4: ipv4-pool
+    poolIPV6: ipv6-pool
+  leafs:
+    asnPool: asn-pool
+    leafNodeSelector:
+    - eda.nokia.com/datacenter=b,eda.nokia.com/role=leaf
+    systemPoolIPV4: systemipv4-pool
+    systemPoolIPV6: systemipv6-pool
+  overlayProtocol:
+    bfd:
+      desiredMinTransmitInt: 1000000
+      detectionMultiplier: 3
+      enabled: true
+      minEchoReceiveInterval: 1000000
+      requiredMinReceive: 1000000
+    bgp:
+      autonomousSystem: 65002
+      clusterID: "1"
+      rrClientNodeSelector:
+      - eda.nokia.com/role=leaf,eda.nokia.com/datacenter=b
+      - eda.nokia.com/role=backbone,eda.nokia.com/datacenter=b
+      rrNodeSelector:
+      - eda.nokia.com/role=spine, eda.nokia.com/datacenter=b
+    protocol: IBGP
+  spines:
+    asnPool: asn-pool
+    spineNodeSelector:
+    - eda.nokia.com/datacenter=b,eda.nokia.com/role=spine
+    systemPoolIPV4: systemipv4-pool
+    systemPoolIPV6: systemipv6-pool
+  systemPoolIPV4: systemipv4-pool
+  systemPoolIPV6: systemipv6-pool
+  underlayProtocol:
+    bfd:
+      desiredMinTransmitInt: 1000000
+      detectionMultiplier: 3
+      enabled: true
+      minEchoReceiveInterval: 1000000
+      requiredMinReceive: 1000000
+    bgp:
+      asnPool: asn-pool
+    protocol:
+    - EBGP
+status:
+  borderLeafNodes:
+  - node: bdcgw2
+    operatingSystem: sros
+    operatingSystemVersion: 25.3.r2
+    underlayAutonomousSystem: 109
+  - node: bdcgw1
+    operatingSystem: sros
+    operatingSystemVersion: 25.3.r2
+    underlayAutonomousSystem: 107
+  health: 100
+  healthScoreReason: |
+    Breakdown:
+    Metric "ISL Health", weight: 1, score: 100, calculation method: divide
+    Metric "DefaultRouter Health", weight: 1, score: 100, calculation method: divide
+  lastChange: "2025-05-23T15:21:53.000Z"
+  leafNodes:
+  - node: bleaf1
+    operatingSystem: srl
+    operatingSystemVersion: 24.10.4
+    underlayAutonomousSystem: 110
+  - node: bleaf4
+    operatingSystem: srl
+    operatingSystemVersion: 24.10.4
+    underlayAutonomousSystem: 113
+  - node: bleaf3
+    operatingSystem: srl
+    operatingSystemVersion: 24.10.4
+    underlayAutonomousSystem: 112
+  - node: bleaf2
+    operatingSystem: srl
+    operatingSystemVersion: 24.10.4
+    underlayAutonomousSystem: 111
+  operationalState: up
+  spineNodes:
+  - node: bspine2
+    operatingSystem: srl
+    operatingSystemVersion: 24.10.4
+    underlayAutonomousSystem: 108
+  - node: bspine1
+    operatingSystem: srl
+    operatingSystemVersion: 24.10.4
+    underlayAutonomousSystem: 108
