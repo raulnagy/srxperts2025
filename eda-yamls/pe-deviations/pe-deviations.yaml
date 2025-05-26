@@ -1,0 +1,805 @@
+apiVersion: v1
+items:
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-21T17:10:00Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-04e0236efe8e8649811aaccf1ba3832c3f1b7843
+    namespace: clab-sroslabtest
+    resourceVersion: "1614338"
+    uid: 9c68fa4a-bb97-403f-b208-d92165bddff7
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.port{.port-id=="1/1/c5/1"}.ethernet.lldp.dest-mac{.mac-type=="nearest-bridge"}
+    runningValues: |-
+      {
+        "port-id-subtype": "tx-if-name",
+        "receive": true,
+        "transmit": true
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:28:31Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-1291adf7540e4e452d17e5a92497ef0d23c5a74d
+    namespace: clab-sroslabtest
+    resourceVersion: "1777825"
+    uid: 9905892d-66a5-4c6b-bbf4-9c3839f04237
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.bgp.neighbor{.ip-address=="10.10.10.2"}
+    runningValues: |-
+      {
+        "group": "bgp-pe-to-dcgws",
+        "peer-as": 64010
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:11:20Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-164418a586bccf420082b8440a65efd490dc7b33
+    namespace: clab-sroslabtest
+    resourceVersion: "1774913"
+    uid: 0a503f27-20ba-4974-a2a6-3d9e876c5793
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.policy-options.policy-statement{.name=="accept-all-policy-10"}.entry{.entry-id==5}.from.protocol.name{.name=="bgp-vpn"}
+    runningValues: '{}'
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:28:31Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-189d2ac2ef9ed3d182aa2a2cefbacbbb3440075e
+    namespace: clab-sroslabtest
+    resourceVersion: "1777826"
+    uid: 034ba1ae-6a33-4427-b775-85a673961892
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.bgp.neighbor{.ip-address=="10.10.10.4"}
+    runningValues: |-
+      {
+        "group": "bgp-pe-to-dcgws",
+        "peer-as": 63010
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:11:20Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-1eab0b33e0241102dce1c18907e2a3ee3fef741f
+    namespace: clab-sroslabtest
+    resourceVersion: "1774909"
+    uid: 70ff508e-bc0b-477d-a50a-fa583883e825
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.policy-options.policy-statement{.name=="accept-all-policy-10"}.entry{.entry-id==5}
+    runningValues: |-
+      {
+        "description": "accept-all"
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:47:21Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-2a4ca4b4332812fa094622fbddb088a228c4ab60
+    namespace: clab-sroslabtest
+    resourceVersion: "1770867"
+    uid: 1ce5265a-f731-47f4-a013-439f97a72bbd
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.interface{.interface-name=="to_bdcgw2"}
+    runningValues: '{}'
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:43:10Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-34d032b0ec921eb1aab3f2493db0aac22b032645
+    namespace: clab-sroslabtest
+    resourceVersion: "1770162"
+    uid: f8ea0a10-3bec-46ba-9e96-bd5def052402
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.interface{.interface-name=="to_adcgw1"}.ipv4.primary
+    runningValues: |-
+      {
+        "address": "10.10.10.1",
+        "prefix-length": 31
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:25:42Z"
+    generation: 2
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-3aa956d24cb658b78f3c4103152679aeb639330e
+    namespace: clab-sroslabtest
+    resourceVersion: "1769830"
+    uid: a1e16fda-d890-414f-a6fe-c34f50e016f7
+  spec:
+    associatedCrs:
+    - groupVersion: interfaces.eda.nokia.com/v1alpha1
+      kind: Interface
+      name: wanpe1-ethernet-1-a-2-1
+    intendedValues: |-
+      {
+        "mode": "network",
+        "encap-type": "null"
+      }
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.port{.port-id=="1/1/c2/1"}.ethernet
+    runningValues: |-
+      {
+        "mode": "hybrid",
+        "encap-type": "dot1q"
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:11:20Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-409bcccaacf1ffe85c65a4e07c981d506ccbcc6f
+    namespace: clab-sroslabtest
+    resourceVersion: "1774911"
+    uid: 38161b23-e9be-4e6d-a9b3-2c7735682382
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.bgp.group{.group-name=="bgp-pe-to-dcgws"}.export.policy{.policy=="accept-all-policy-10"}
+    runningValues: '{}'
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:41:14Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-4280cd9ec718eab7008369f70fa234ed3900d7ab
+    namespace: clab-sroslabtest
+    resourceVersion: "1769827"
+    uid: 85bda10a-5065-4525-ad38-d25ff82c7d23
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.interface{.interface-name=="to_adcgw2"}
+    runningValues: '{}'
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:11:20Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-4326b31703e67980e2ccd39e61b886284f7a0ff3
+    namespace: clab-sroslabtest
+    resourceVersion: "1774907"
+    uid: 3e632458-92e4-4876-8014-7d30f4adb860
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.bgp.ebgp-default-reject-policy
+    runningValues: |-
+      {
+        "import": false,
+        "export": false
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:41:14Z"
+    generation: 4
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-480321f32d1b7c5f09c34dc0de860de851ee026a
+    namespace: clab-sroslabtest
+    resourceVersion: "1775193"
+    uid: fd42643a-5a16-4473-985e-cac93c911665
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}
+    runningValues: |-
+      {
+        "description": "VPRN service VLAN10",
+        "customer": "eda",
+        "admin-state": "enable",
+        "autonomous-system": 65010,
+        "router-id": "100.100.100.10"
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:11:20Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-4966b30d0dc1cff048196226c7da8248263b5327
+    namespace: clab-sroslabtest
+    resourceVersion: "1774908"
+    uid: 7a2c544d-9766-4926-a4f5-2ed036a71150
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.bgp.group{.group-name=="bgp-pe-to-dcgws"}.family
+    runningValues: |-
+      {
+        "ipv4": true
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:47:21Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-4a8ff79e6c7a38adfbef3103a7ee36f461d726ab
+    namespace: clab-sroslabtest
+    resourceVersion: "1770874"
+    uid: 7dd2bd58-3add-4ced-aee5-4a5bcca5d3b0
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.interface{.interface-name=="to_bdcgw1"}.ipv4.primary
+    runningValues: |-
+      {
+        "address": "10.10.10.5",
+        "prefix-length": 31
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:47:21Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-4be718c2a538a0e507ea21503eb42fba31d14c44
+    namespace: clab-sroslabtest
+    resourceVersion: "1770871"
+    uid: d7a808e7-0d9a-4d73-a0dc-02759d47251f
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.interface{.interface-name=="to_bdcgw2"}.ipv4.primary
+    runningValues: |-
+      {
+        "address": "10.10.10.7",
+        "prefix-length": 31
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:47:21Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-4ec7235ae5bb72082ccc25a85f6f7b0853d822c8
+    namespace: clab-sroslabtest
+    resourceVersion: "1770868"
+    uid: 7fcd2fb3-fd9e-4a0c-b53c-831b782bf741
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.interface{.interface-name=="to_bdcgw1"}
+    runningValues: '{}'
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:41:14Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-51868c12b2a52cad5fa180dde2eb54897522e777
+    namespace: clab-sroslabtest
+    resourceVersion: "1769829"
+    uid: f4b747ad-88b0-4266-9d8f-09c8207b7e60
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.interface{.interface-name=="to_adcgw2"}.sap{.sap-id=="1/1/c2/1:10"}
+    runningValues: '{}'
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:11:20Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-665acf60579c8ee299175252dfda933f0a174e3f
+    namespace: clab-sroslabtest
+    resourceVersion: "1774916"
+    uid: 16132818-e52f-4dfd-874c-38f8aad43fe6
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.policy-options.policy-statement{.name=="accept-all-policy-10"}.entry{.entry-id==5}.action
+    runningValues: |-
+      {
+        "action-type": "accept"
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:43:10Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-6e578a113779dfbdcac79a29e38bd626c5fb35b5
+    namespace: clab-sroslabtest
+    resourceVersion: "1770161"
+    uid: 0fc0e539-422c-461e-ae1f-7d7996aabced
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.interface{.interface-name=="to_adcgw1"}
+    runningValues: '{}'
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-21T17:10:00Z"
+    generation: 2
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-76673963bae137e3daa4bc83eb77003a604a0979
+    namespace: clab-sroslabtest
+    resourceVersion: "1614438"
+    uid: 295db6c0-0166-4709-9b81-952dc54a18e9
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.port{.port-id=="1/1/c5/1"}
+    runningValues: |-
+      {
+        "admin-state": "enable"
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:28:31Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-7a373f18d14923ec178bbec68f30a8a64e74d3e7
+    namespace: clab-sroslabtest
+    resourceVersion: "1777824"
+    uid: 5e5631f3-2198-4fa0-9b78-17aada01dc82
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.bgp.neighbor{.ip-address=="10.10.10.6"}.family
+    runningValues: |-
+      {
+        "ipv4": true
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:28:31Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-7bb10fc911529dd2660cf379e572ef0b90f4dbba
+    namespace: clab-sroslabtest
+    resourceVersion: "1777828"
+    uid: 8c76568c-c68f-436e-abd3-09fd2c590739
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.bgp.neighbor{.ip-address=="10.10.10.2"}.family
+    runningValues: |-
+      {
+        "ipv4": true
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-21T17:10:00Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-825e7750ecc02bc4f04fac1ca6f290f13ecdde4e
+    namespace: clab-sroslabtest
+    resourceVersion: "1614335"
+    uid: 79602480-3e3c-433a-99ee-a596a7f29876
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.port{.port-id=="1/1/c5/1"}.ethernet.lldp.dest-mac{.mac-type=="nearest-bridge"}.tx-tlvs
+    runningValues: |-
+      {
+        "port-desc": true,
+        "sys-name": true,
+        "sys-desc": true,
+        "sys-cap": true
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:11:20Z"
+    generation: 2
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-88fd0d4b59301f9d62291d093e7b73f53ae9ba4b
+    namespace: clab-sroslabtest
+    resourceVersion: "1775251"
+    uid: 8dfef4e8-0ec1-4fed-af19-05f5b4a1982f
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.bgp.neighbor{.ip-address=="10.10.10.0"}
+    runningValues: |-
+      {
+        "group": "bgp-pe-to-dcgws",
+        "peer-as": 64010
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-21T17:10:00Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-8b2deebac4484b51a1cb1a600b5942f4ba9a69fe
+    namespace: clab-sroslabtest
+    resourceVersion: "1614337"
+    uid: c6a8f394-dc3d-4d66-9afc-c2d2fee58f22
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.port{.port-id=="1/1/c5/1"}.ethernet
+    runningValues: |-
+      {
+        "mode": "access",
+        "encap-type": "dot1q"
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:25:42Z"
+    generation: 2
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-938cd40208f8d6b50f847b3e9a3534897442bd07
+    namespace: clab-sroslabtest
+    resourceVersion: "1770870"
+    uid: e9ca8d5a-20ec-4a42-9afa-69825c07d6a9
+  spec:
+    associatedCrs:
+    - groupVersion: interfaces.eda.nokia.com/v1alpha1
+      kind: Interface
+      name: wanpe1-ethernet-1-a-4-1
+    intendedValues: |-
+      {
+        "mode": "network",
+        "encap-type": "null"
+      }
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.port{.port-id=="1/1/c4/1"}.ethernet
+    runningValues: |-
+      {
+        "mode": "hybrid",
+        "encap-type": "dot1q"
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:51:27Z"
+    generation: 2
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-9ef43e9ef73b684edffbf668c80e31685a58a04e
+    namespace: clab-sroslabtest
+    resourceVersion: "1774918"
+    uid: 922a3d0f-cac6-4507-8e1c-9e69b3b517a1
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.bgp
+    runningValues: |-
+      {
+        "router-id": "100.100.100.10",
+        "rapid-withdrawal": true
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:47:21Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-a3bfb4c516845b4bdf29b26b02be72effe643ed6
+    namespace: clab-sroslabtest
+    resourceVersion: "1770875"
+    uid: ca147ec5-3e26-494f-80a1-241cefe14342
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.interface{.interface-name=="to_bdcgw1"}.sap{.sap-id=="1/1/c3/1:10"}
+    runningValues: '{}'
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:47:21Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-a972a40ca5ba3ebd2fb07ee79e9eea5edd39ed04
+    namespace: clab-sroslabtest
+    resourceVersion: "1770872"
+    uid: 53b7e535-f4c9-4ad4-bc1f-9fdc6f74a302
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.interface{.interface-name=="to_adcgw1"}.sap{.sap-id=="1/1/c1/1:10"}
+    runningValues: '{}'
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:47:21Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-b13e3c7e414c5397365997d587b313106471247a
+    namespace: clab-sroslabtest
+    resourceVersion: "1770873"
+    uid: 3477650e-8b32-46b4-8a9a-1d6178441ac2
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.interface{.interface-name=="to_bdcgw2"}.sap{.sap-id=="1/1/c4/1:10"}
+    runningValues: '{}'
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:11:20Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-b885650080fcc47cd81d996c47cc89122757bd87
+    namespace: clab-sroslabtest
+    resourceVersion: "1774919"
+    uid: f7862b4e-9a25-4f2d-a120-ca52f160c66d
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.bgp.neighbor{.ip-address=="10.10.10.0"}.family
+    runningValues: |-
+      {
+        "ipv4": true
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:11:20Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-c4ab8f0493642802df0a37f2b9d99fa0bddbe1b3
+    namespace: clab-sroslabtest
+    resourceVersion: "1774910"
+    uid: b53b36f9-3d9f-4025-bd2d-4ff88c47a747
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.bgp.group{.group-name=="bgp-pe-to-dcgws"}
+    runningValues: |-
+      {
+        "multihop": 4
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:11:20Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-c83bd76ab375ad944658fdca7fcc54fc254cb8cc
+    namespace: clab-sroslabtest
+    resourceVersion: "1774912"
+    uid: e0583dd0-3bd5-4043-9fbb-aa95de219df7
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.bgp.group{.group-name=="bgp-pe-to-dcgws"}.export
+    runningValues: '{}'
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:28:31Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-cb3abb139e04196b213ee0d477cf6a58f455aea7
+    namespace: clab-sroslabtest
+    resourceVersion: "1777829"
+    uid: 1beb5eea-8bbb-4407-9ac2-9c0a9dde7a32
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.bgp.neighbor{.ip-address=="10.10.10.4"}.family
+    runningValues: |-
+      {
+        "ipv4": true
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:11:20Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-cd775c38701145042eada926af7dcb4a6d08e17d
+    namespace: clab-sroslabtest
+    resourceVersion: "1774915"
+    uid: c44e5736-f407-4c08-b92d-2289f41dacf3
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.policy-options.policy-statement{.name=="accept-all-policy-10"}
+    runningValues: '{}'
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:25:42Z"
+    generation: 2
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-d9e174c3a7e1e3eea33108e8e2a63c5de47898d7
+    namespace: clab-sroslabtest
+    resourceVersion: "1770164"
+    uid: 4d6a5d2e-fcc3-4f7f-8681-e84ed132f5b6
+  spec:
+    associatedCrs:
+    - groupVersion: interfaces.eda.nokia.com/v1alpha1
+      kind: Interface
+      name: wanpe1-ethernet-1-a-3-1
+    intendedValues: |-
+      {
+        "mode": "network",
+        "encap-type": "null"
+      }
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.port{.port-id=="1/1/c3/1"}.ethernet
+    runningValues: |-
+      {
+        "mode": "hybrid",
+        "encap-type": "dot1q"
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:28:31Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-da47b06b94b9608987d02942e279e839f60c1cb5
+    namespace: clab-sroslabtest
+    resourceVersion: "1777827"
+    uid: d154cb6a-4a58-4e41-b843-1a60d2a889bd
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.bgp.neighbor{.ip-address=="10.10.10.6"}
+    runningValues: |-
+      {
+        "group": "bgp-pe-to-dcgws",
+        "peer-as": 63010
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:11:20Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-dae962108290705f05e425231a8e1dd2bb0ae698
+    namespace: clab-sroslabtest
+    resourceVersion: "1774917"
+    uid: 1f9dcf4f-e492-489c-a1db-fe6b5e17f1a6
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.policy-options.policy-statement{.name=="accept-all-policy-10"}.entry{.entry-id==5}.from
+    runningValues: '{}'
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:41:14Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-eb5ebb5fcad607f4bd3daa9ddf90cd634a0389f3
+    namespace: clab-sroslabtest
+    resourceVersion: "1769828"
+    uid: eba28ad6-016c-424a-a032-2dcde26baade
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.service.vprn{.service-name=="10"}.interface{.interface-name=="to_adcgw2"}.ipv4.primary
+    runningValues: |-
+      {
+        "address": "10.10.10.3",
+        "prefix-length": 31
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T09:11:20Z"
+    generation: 1
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-eda5107795a05f98f9958fc8fb9b574f796f71ed
+    namespace: clab-sroslabtest
+    resourceVersion: "1774920"
+    uid: a735b22f-be2f-4787-9e3f-c061f9be9e6e
+  spec:
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.policy-options.policy-statement{.name=="accept-all-policy-10"}.default-action
+    runningValues: |-
+      {
+        "action-type": "accept"
+      }
+- apiVersion: core.eda.nokia.com/v1
+  kind: Deviation
+  metadata:
+    creationTimestamp: "2025-05-22T08:25:09Z"
+    generation: 2
+    labels:
+      eda.nokia.com/source: derived
+    name: wanpe1-fa478144a20579ff55e24acc8faeebcbda073a41
+    namespace: clab-sroslabtest
+    resourceVersion: "1770876"
+    uid: d7f02a79-3f42-4d83-b664-6403ad6b3cd6
+  spec:
+    associatedCrs:
+    - groupVersion: interfaces.eda.nokia.com/v1alpha1
+      kind: Interface
+      name: wanpe1-ethernet-1-a-1-1
+    intendedValues: |-
+      {
+        "mode": "network",
+        "encap-type": "null"
+      }
+    nodeEndpoint: wanpe1
+    operation: create
+    path: .configure.port{.port-id=="1/1/c1/1"}.ethernet
+    runningValues: |-
+      {
+        "mode": "hybrid",
+        "encap-type": "dot1q"
+      }
+kind: List
+metadata:
+  resourceVersion: ""
